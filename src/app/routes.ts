@@ -3,7 +3,7 @@ import { html, TemplateResult } from 'lit';
 const routes: Array<Route> = [
     {
         path: '/',
-        component: html`<h1>Hola mundo</h1>`
+        component: html`<home-page></home-page>`
     }
 ];
 
