@@ -7,8 +7,6 @@ class Home extends AppElement {
     @property() name: string = Page.getQuery('name', 'World');
 
     render() {
-        const page = new Page;
-
         return html`<h1>Hello ${this.name}</h1>`;
     }
 }
