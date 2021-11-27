@@ -1,10 +1,15 @@
-import { html } from 'lit';
+import { html, TemplateResult } from 'lit';
 
-const routes = [
+const routes: Array<Route> = [
     {
         path: '/',
-        component: html`<home-page></home-page>`
+        component: html`<h1>Hola mundo</h1>`
     }
 ];
 
-export default routes;
+interface Route {
+    path: string,
+    component: TemplateResult
+}
+
+export { Route, routes };
