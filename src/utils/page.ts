@@ -37,7 +37,7 @@ class Page {
      * @param def default value
      * @returns value
      */
-    static getParam(name: string, def: string): string {
+    static getParam(name: string, def: string = 'default'): string {
         const data = store.get('page');
         return name in data.params ? data.params[name] : def;
     }

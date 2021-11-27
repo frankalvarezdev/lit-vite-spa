@@ -5,6 +5,11 @@ const routes: Array<Route> = [
         path: '/',
         title: 'Home',
         component: html`<home-page></home-page>`
+    },
+    {
+        path: '/hello/:name',
+        title: 'Hello world',
+        component: html`<hello-name></hello-name>`
     }
 ];
 
