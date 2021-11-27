@@ -1,8 +1,8 @@
-import { AppElement, html, customElement, property } from "./element";
+import { AppElement, html, component, property } from "./element";
 import { routes, Route } from "app/routes";
 import { pathToRegexp, match } from "path-to-regexp";
 
-@customElement('main-app')
+@component('main-app')
 class App extends AppElement {
     @property({ type: Array }) routes: Array<Route> = routes;
     @property({ type: String }) currentPath: string = this.getPath();
