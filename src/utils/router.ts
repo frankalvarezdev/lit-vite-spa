@@ -1,8 +1,8 @@
-import { AppElement, html, component, property } from "./element";
+import { AppElement, html, customElement, property } from "./element";
 import { routes, Route } from "app/routes";
 import { pathToRegexp, match } from "path-to-regexp";
 
-@component('main-app')
+@customElement('main-app')
 class App extends AppElement {
     @property({ type: Array }) routes: Array<Route> = routes;
     @property({ type: String }) currentPath: string = this.getPath();
@@ -50,7 +50,7 @@ class App extends AppElement {
         }
 
         if (content) return content; //* retorna el componente si se definio
-        else return html`ERROR 404 :(`; //! error 404
+        else return html`<error-404></error-404>`; //! page not found
     }
 
     render() {

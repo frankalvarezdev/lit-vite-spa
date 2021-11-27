@@ -5,4 +5,4 @@ class AppElement extends LitElement {
     createRenderRoot = () => this;
 }
 
-export { AppElement, html, customElement as component, property };
+export { AppElement, html, customElement, property };

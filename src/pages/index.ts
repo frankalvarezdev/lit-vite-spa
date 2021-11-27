@@ -1,6 +1,6 @@
-import { AppElement, html, component } from "utils/element";
+import { AppElement, html, customElement } from "utils/element";
 
-@component('home-page')
+@customElement('home-page')
 class Home extends AppElement {
     render() {
         return html`<h1>Hello world</h1>`;
