@@ -1,4 +1,5 @@
 import { html, TemplateResult } from 'lit';
+import { Page } from 'utils/page';
 
 const routes: Array<Route> = [
     {
@@ -8,7 +9,7 @@ const routes: Array<Route> = [
     },
     {
         path: '/hello/:name',
-        title: 'Hello world',
+        title: async () => `Hello 2 ${Page.getParam('name')}`,
         component: html`<hello-name></hello-name>`
     }
 ];
@@ -16,7 +17,7 @@ const routes: Array<Route> = [
 interface Route {
     path: string,
     component: TemplateResult,
-    title: string
+    title: string | Function
 }
 
 export { Route, routes };

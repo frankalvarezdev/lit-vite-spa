@@ -15,11 +15,20 @@ class App extends AppElement {
         return window.location.pathname;
     }
 
+    setPageTitle(title: Function) {
+        if (title() instanceof Promise) {
+            title().then((r: string) => document.title = r); //* obtiene el titulo de una funcion asincrona
+        } else {
+            document.title = title();
+        }
+    }
+
     router(path: string) {
 
         addEventListener('location-change', () => {
             this.currentPath = this.getPath();
         });
+
         addEventListener('popstate', () => {
             this.currentPath = this.getPath();
         });
@@ -51,8 +60,12 @@ class App extends AppElement {
 
                 content = route.component;
 
-                //* cambio el titulo de la pagina
-                document.title = route.title;
+                if (typeof route.title === 'function') {
+                    this.setPageTitle(route.title);
+                } else {
+                    //* cambio el titulo de la pagina
+                    document.title = route.title;
+                }
             }
         }
 
