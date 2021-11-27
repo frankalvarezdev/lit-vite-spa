@@ -1,6 +1,7 @@
 import { AppElement, html, customElement, property } from "./element";
 import { routes, Route } from "app/routes";
 import { pathToRegexp, match } from "path-to-regexp";
+import { store } from "./store";
 
 @customElement('main-app')
 class App extends AppElement {
@@ -44,6 +45,9 @@ class App extends AppElement {
 
                 let data: any = parser(path);
                 data.query = query; // agrega los parametros 'query' al objeto data
+
+                // agrega datos de la pagina a la store
+                store.set('page', data);
 
                 content = route.component;
 
