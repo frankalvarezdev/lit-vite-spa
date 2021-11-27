@@ -46,6 +46,9 @@ class App extends AppElement {
                 data.query = query; // agrega los parametros 'query' al objeto data
 
                 content = route.component;
+
+                //* cambio el titulo de la pagina
+                document.title = route.title;
             }
         }
 
