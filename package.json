@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "dev": "vite --mode=development",
-    "build": "tsc && vite build --mode=production"
+    "build": "vite build --mode=production"
   },
   "dependencies": {
     "lit": "^2.0.0",
